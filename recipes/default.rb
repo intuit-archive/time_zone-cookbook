@@ -18,3 +18,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+template '/etc/sysconfig/clock' do
+  owner 'root'
+  group 'root'
+  mode '0644'
+  source 'clock.erb'
+  variables :zone => node['time_zone']
+end
+
+link '/etc/localtime' do
+  to "/usr/share/zoneinfo/#{node['time_zone']}"
+  not_if "readlink /etc/localtime | grep -q '#{node['time_zone']}$'"
+end
