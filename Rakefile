@@ -1,6 +1,5 @@
 require 'foodcritic'
 
-desc 'Foodcritic linting'
 FoodCritic::Rake::LintTask.new do |t|
   t.options = { :fail_tags => ['any'] }
 end
