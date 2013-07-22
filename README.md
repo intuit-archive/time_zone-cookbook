@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/intuit/time_zone-cookbook.png)](http://travis-ci.org/intuit/time_zone-cookbook)
+
 # time_zone cookbook
 Configures the OS time zone
 
